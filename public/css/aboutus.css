@@ -1,0 +1,174 @@
+/*---------------
+ GLOBAL CSS 
+ ---------------*/
+ *{
+    padding: 0;
+    margin: 0;
+}
+ :root{
+    --addu-blue1: #091579;
+    --addu-blue2: #3A79B8;
+    --addu-blue3: #2EA3F2;
+    --addu-blue4: #006799;
+    --mine-shaft: #444444;
+    --gray: #898989;
+    --silver: #CCCCCC;
+    --alabaster: #F8F8F8;
+    --white: #ffffff;
+    --black-alpha-100: rgba(0,0,0,0.05);
+}
+
+body{
+    font-family: "Gothic", sans-serif;
+    color: black;
+}
+#nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.navbar{
+    background-image: linear-gradient(to right, #3A79B8,#004d74);
+    padding: 0 !important;
+}
+.navbar-brand img{
+    height: 60px;
+    padding-left: 20px;
+}
+
+.navbar-nav li{
+    padding: 0 10px;
+
+}
+.navbar-nav li a{
+    color: #fff !important;
+    font-weight: 500;
+    float: left;
+    margin-left: 10px;
+}
+
+/*------------
+ BANNER SECTION 
+ -------------*/
+ #banner{
+    background-image: linear-gradient(to right, #3A79B8,#004d74);
+    color: #fff;
+    padding-top: 9%;
+ }
+.promo-title{
+    position: relative;
+    text-align: center;
+    top:20%;
+    left:50%;
+    font-size: 100px;
+    font-weight: 600;
+    margin-top: 100px;
+    transform: translate(-50%, -50%);
+}
+
+
+.img-fluid{
+    position: relative;
+    bottom: 100px;
+ }
+
+ .img-bottom{
+     width: 100%;
+ }
+ /*------------
+ MEET THE TEAM 
+ -------------- */
+#about{
+    padding: 80px 0;
+}
+
+.service-img{
+    width: 50%;
+    margin-top: 20px;
+}
+
+.about{
+    padding: 20px;
+}
+
+.about h4{
+    padding: 5px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.title::before{
+    content:'';
+    background: var(--addu-blue4);
+    height: 5px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transform: translateY(63px);
+}
+.title::after{
+    content:'';
+    background: var(--addu-blue4);
+    height: 10px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    display: block;
+    transform: translateY(8px);
+}
+
+/* ---------------------
+SOCIAL MEDIA
+---------------------- */
+#social-media{
+    background-color: var(--alabaster);
+    padding: 100px 0;
+}
+
+#social-media p{
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.social-icons img{
+    width: 60px;
+    transition: 0.5s
+}
+
+.social-icons a:hover img{
+    transform: translateY(-10px);
+}
+/* --------------
+FOOTER SECTION
+---------------- */
+#footer{
+    background-image: linear-gradient(to right, #3A79B8,#004d74);
+    color: #ffffff;
+}
+.footer-img{
+    width: 100%;
+}
+
+.footer-box{
+    padding: 20px;
+}
+
+.footer-box img{
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.footer-box .fa{
+    margin-right: 8px;
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    padding-top: 7px;
+    border-radius: 2px;
+    background-image: linear-gradient(to right, #3A79B8,#004d74);
+    
+}

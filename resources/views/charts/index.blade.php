@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<head>
-    <title>BRIMS Data</title>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-</head>
-<body>
-    
+@extends('layouts.essential')
+@section('styles')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+@endsection
+@section('content')
     <div class="container mt-5">
         <h2>Average Upload and Download Speed in Mbps per Provider</h2>
         <canvas id="averageSpeed" class="rounded shadow"></canvas>
@@ -25,10 +19,8 @@
         <canvas id="monthSpeed" class="rounded shadow"></canvas>
         
     </div>
-</body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+@endsection
+@section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -37,7 +29,7 @@
 <!-- CHARTS -->
 <script>
         async function getBarData(){
-            var api_url='http://localhost:8000/api/averageSpeeds';
+            var api_url='<?= url('/api/averageSpeeds'); ?>';
             const response = await fetch(api_url);
             const data = await response.json();
             var ctx = document.getElementById('averageSpeed').getContext('2d');
@@ -121,7 +113,7 @@ getBarData();
         //serviceProvider, startMonth, endMonth, startYear,endYear
         //customDateSpeed/{serviceProvider},{startMonth},{endMonth},{startYear},{endYear}
         //call async function per data add
-        var api_url='http://localhost:8000/api/customDateSpeed/' + serviceProvider + ',' + startDate + ',' + endDate;
+        var api_url= '<?= url('/api/customDateSpeed'); ?>' + '/' + serviceProvider + ',' + startDate + ',' + endDate;
         const response = await fetch(api_url);
         const data = await response.json();
         lineChart(data);
@@ -184,4 +176,4 @@ getBarData();
         });
     }
 </script>
-</html>
+@endsection

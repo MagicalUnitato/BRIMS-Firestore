@@ -14,14 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/upload', function () {
     return view('upload/index');
 });
-Route::get('/charts', function () {
+Route::get('/stats', function () {
     return view('charts/index');
 });
 Route::get('/heatmap', function () {
     return view('heatmap/index');
+});
+Route::get('/about', function () {
+    return view('aboutus/index');
 });
